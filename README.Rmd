@@ -1,30 +1,30 @@
 ---
 title: "README"
-output: html_document
----
-
----
 output: github_document
 ---
 
 # microenvRF
 
-本 R 包用于肿瘤微环境（Tumor Microenvironment）相关的分类预测，基于 Random Forest 训练模型提供：
-- 细胞类型分类：Cancer / T_Cell / Fibroblast
-- 疾病状态分类：Tumor vs Healthy_Control
+`microenvRF` is an R package for **tumor microenvironment (TME)** classification using a Random Forest model. It provides:
 
-> 注意：根据课程要求，分类函数返回 **class labels（标签）**，而不是概率。
+- **Cell type classification**: Cancer / T_Cell / Fibroblast  
+- **Disease status classification**: Tumor vs Healthy_Control  
 
-## 1. 安装（GitHub）
+> Note (coursework requirement): the exported prediction function returns **class labels** (not probabilities).
+
+## 1. Installation (GitHub)
 
 ```{r, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("YilongLi-xjtlu/microenvRF")
 ```
 
-## 2. 快速使用示例（Usage demo）
 
-### 2.1 安装后使用
+
+## 2. Usage demo
+
+
+### 2.1 After installation
 
 ```{r, eval=FALSE}
 library(microenvRF)
@@ -36,7 +36,7 @@ predict_microenv(newdata, task = "cell_type")
 predict_microenv(newdata, task = "disease_status")
 ```
 
-### 2.2 开发态演示
+### 2.2 Development mode (for knitting this repository)
 
 ```{r, eval=FALSE}
 devtools::load_all()
@@ -50,9 +50,9 @@ predict_microenv(newdata, task = "disease_status")
 ```
 
 
-## 3. 模型性能（Performance)
+## 3. Model performance (Performance)
 
-根据报告中的测试集评估结果，本项目展示两项任务的性能图示：
+The following figures are taken from the project report and summarize model performance:
 
 ### 3.1 Cell type (Cancer / T_Cell / Fibroblast)
 ![](man/figures/roc_pr_celltype.png)
